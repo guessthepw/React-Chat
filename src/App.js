@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
-
+import { connect } from 'react-redux';
 function App() {
   return (
     <div className="App">
@@ -26,5 +26,10 @@ function App() {
     </div>
   );
 }
+const mapStateToProps = (state) => ({
+  ...state.auth,
+});
 
-export default App;
+const mapDispatchToProps = (dispatch) => ({});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
